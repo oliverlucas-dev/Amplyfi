@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+</head>
+<body>
+
+  <div class="parallax">
+    <div class="parallax-layer parallax-layer__1" data-parallax-disallow="y" data-parallax-deep="1000"></div>
+    <div class="parallax-layer parallax-layer__2" data-parallax-deep="40"></div>
+    <div class="parallax-layer parallax-layer__3" data-parallax-deep="100"></div>
+  </div>
+
+
+  <style>
+body{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  background:#edeff4;
+}
+.parallax{
+  width: 360px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+.parallax-layer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+    
+}
+.parallax-layer__1 {
+  background-image: url(https://raw.githubusercontent.com/Decodal/Amplyfi/master/1-bg.png);
+  background-size: cover;
+}
+.parallax-layer__2 {
+  background-image: url(https://raw.githubusercontent.com/Decodal/Amplyfi/master/1-shadow.png);
+}
+.parallax-layer__3 {
+  background-image: url(https://raw.githubusercontent.com/Decodal/Amplyfi/master/1-text.png);
+}
+  </style>
+
+  <script>
+
+function Parallax(options){
+    options = options || {};
+    this.nameSpaces = {
+        wrapper: options.wrapper || '.parallax',
+        layers: options.layers || '.parallax-layer',
+        deep: options.deep || 'data-parallax-deep'
+    };
+    this.init = function() {
+        var self = this,
+            parallaxWrappers = document.querySelectorAll(this.nameSpaces.wrapper);
+      	for(var i = 0; i < parallaxWrappers.length; i++){
+			(function(i){
+				parallaxWrappers[i].addEventListener('mousemove', function(e){
+					var x = e.clientX,
+						y = e.clientY,
+						layers = parallaxWrappers[i].querySelectorAll(self.nameSpaces.layers);
+					for(var j = 0; j < layers.length; j++){
+            (function(j){
+              var deep = layers[j].getAttribute(self.nameSpaces.deep),
+                  disallow = layers[j].getAttribute('data-parallax-disallow'),
+                  itemX = (disallow && disallow === 'x') ? 0 : x / deep,
+                  itemY = (disallow && disallow === 'y') ? 0 : y / deep;
+                  if(disallow && disallow === 'both') return;
+                  layers[j].style.transform = 'translateX(' + itemX + '%) translateY(' + itemY + '%)';
+            })(j);  
+					}
+				})
+			})(i);
+      	}
+    };
+    this.init();
+    return this;
+}
+
+window.addEventListener('load', function(){
+    new Parallax();
+});
+  </script>
+</body>
+</html>
