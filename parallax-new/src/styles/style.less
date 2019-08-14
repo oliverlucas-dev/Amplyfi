@@ -1,0 +1,258 @@
+//@import 'modules/base';
+
+// @font-face {
+//     font-family: Hind-Amplyfi;
+//     src: url(../fonts/Hind-Amplyfi.woff);
+//   }
+  
+  body
+  {
+      font-family: 'Hind', sans-serif;
+      font-weight:bold;
+      color:#fff;
+      background-color: #00263A;
+      scroll-behavior: smooth;
+      background-image: url('../images/stars.jpg');
+      position:relative;
+  
+  }
+  
+
+  /*#stars
+  {	width: 100vh;
+      height: 100vw;
+      position:absolute;
+      background-image: url('../images/str.png');
+      transform: translateZ(0px);
+      transform-origin: center center;
+      opacity:0.6;
+  }*/
+  
+  #main
+  {
+      width:100%;
+      max-width:1024px;
+      margin:0 auto;
+  
+  
+  }
+  
+  /* Page loader */
+  .loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    object-position: center;
+    position: absolute;
+    top:45% ;
+    left: 45%;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  
+  
+  /* Headings */
+  h1, h2, h3{
+      font-family: 'Hind-Amplyfi', sans-serif;
+  }
+  
+  h1
+  {
+      font-size:100px;
+      padding:0;
+      margin:0;
+      text-align: center;
+  }
+  
+  h2
+  {
+      font-size:60px;
+      padding:0;
+      margin:0;
+  }
+  
+  /* Nav */
+  header
+  {
+  margin: 0 0 0 0;
+  width:100%;
+  max-height:100px;
+  min-height: 50px;
+  position: fixed;
+  margin:10 20 10 20;
+  clear:both;
+  }
+  
+  header #logo {
+      position: relative;
+      text-align: left;
+      float:left;
+      width:30%;
+  }
+  
+  header #nav {
+      text-align: right;
+      margin: 20 50 20 20;
+      width: 60%;
+      float: right;
+  }
+  
+  #jumplinks{
+      position:fixed;
+      top:100px;
+      right:20px;
+      width:50px;
+  }
+  
+  #jumplinks a {
+      display:block;
+      position: relative;
+      visibility: hidden;
+      width:50px;
+      height: 50px;
+      transition:all 1.2s ease;
+      transform: scale(1);
+  }
+
+  #jumplinks a:hover > #triangle-down
+  {
+  
+        width: 0;
+        height: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-top: 50px solid red;
+  
+  }
+  
+  #jumplinks a:active, #jumplinks a:visited{
+      color:#fff;
+  }
+  
+  #jumplinks a:after {
+      visibility: visible;
+      position: absolute;
+      top:0;
+      right:0;
+      content: "/";
+  }
+  
+  #intro{
+      padding-top:200px;
+      max-width: 900px;
+      width:100%;
+      min-height:500px;
+      margin: 0 auto;
+      transform: translateZ(10px);
+  }
+  
+  /* Container classes */
+  
+  .blocks
+  {
+      width:100%;
+      max-width: 900px;
+      margin:0 auto;
+      padding-top:100px;
+      min-height: 500px;
+      transform: translateZ(10px);
+      position:relative;
+  }
+  
+  #use-case-1, #use-case-3
+  {
+      text-align: left;
+  }
+  
+  #use-case-2, #use-case-4
+  {
+      text-align: right;
+  }
+  
+  a.btn
+  {
+      display:inline-block;
+      padding:10 30 10 30;
+      color:#fff;
+      background-color: #fd3a4a;
+      text-decoration:none;
+          transition:all 1.2s ease;
+      transform: scale(1);
+  }
+  a.btn:hover
+  {
+      cursor: pointer;
+      /*-webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+      transform: scale(1.3);*/
+  
+      /*shrink*/
+      -webkit-transform: scale(0.9);
+          -ms-transform: scale(0.9);
+          transform: scale(0.9);
+  }
+  
+  #triangle-right {
+      position: absolute;
+        width: 0;
+        height: 0;
+        left:-30px;
+        top:-50px;
+        border-top: 200px solid transparent;
+        border-left: 400px solid white;
+        border-bottom: 200px solid transparent;
+        opacity:0.05;
+      }
+  
+  #triangle-left {
+      position: absolute;
+        width: 0;
+        height: 0;
+        left:500px;
+        top:-50px;
+        border-top: 200px solid transparent;
+        border-left: 400px solid white;
+        border-bottom: 200px solid transparent;
+        opacity:0.05;
+      }
+  /*#scene1, #scene2, #scene3, #scene4, #scene5, #scene6
+  {
+      position: absolute;
+      top:0;
+      left:0;
+  }*/
+  
+  .blocks [data-scroll] {
+    transition: all 1s;
+    opacity: 0;
+    position:relative;
+    top:-30px;
+    will-change: transform, scale, opacity;
+    transform: rotate(3deg);
+    transform: scale(0.9);
+  }
+  .blocks [data-scroll="in"] {
+    opacity: 1;
+    top:0px;
+    transform: rotate(0deg);
+     transform: scale(1);
+  
+  }
+  /*.blocks [data-scroll="out"] {
+    opacity: 0;
+    top:-30px;
+    transform: rotate(3deg);
+  }*/
+
+  #logo {
+    overflow: visible;
+    opacity: 0;
+    visibility: hidden;
+  }
