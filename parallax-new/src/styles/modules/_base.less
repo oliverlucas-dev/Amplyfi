@@ -1,18 +1,52 @@
-@import 'variables';
+@import '_variables';
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
+// breakpoints -----------
+@sm: 576px;
+@md: 768px;
+@lg: 992px;
+@xl: 1200px;
 
-html {
-  box-sizing: border-box;
-  // color: @primary-color;
-  // font-family: @primary-font;
-  background: #f1f1f1;
-}
+// breakpoints -----------
+@sm: 576px;
+@md: 768px;
+@lg: 992px;
+@xl: 1200px;
 
-.center {
-  text-align: center;
-}
+// columns ---------------
+@col-no: 12;
+@col-padding: 10px;
+
+// container sizes -------
+@container: 950px; // max width
+
+@container-xs: 100%; 
+@container-sm: 540px;
+@container-md: 720px;
+@container-lg: 960px;
+@container-xl: 1140px; // max widths at each breakpoint
+
+@container-fluid: 90%;
+
+// type -----------------
+
+@text-margin-bottom: 2rem;
+
+@mainfontcolor: @white;
+@mainfontfamily: "Hind", sans-serif;
+@mainfontfamilylight: "Hind 300", sans-serif;
+
+@linkcolor: @mainfontcolor;
+
+// colours --------------
+
+@blue: #26c3fd;
+@darkblue: #121f2c;
+@white: #fff;
+
+// other ----------------
+@default-transition-time: .3s;

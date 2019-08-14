@@ -14,18 +14,17 @@ export default {
         function intro() {
         var tl = new TimelineMax({id:"intro"});
         tl.set("#logo", {autoAlpha:1})
-            .set("#maskMorph", {x:"-=660"})
+            //.set("#maskMorph", {x:"-=660"})
             .set("#morphGroup", {autoAlpha:1})
             .staggerFrom("#logo path", 5.6, {
-                scale:0.08, 
+                scale:0.7, 
                 // cycle:{
                 //   y:["-=100", "+100"]
                 // }, 
                 autoAlpha:0, 
-                yoyo:true,
+                // yoyo:true,
                 ease:es, 
                 transformOrigin: "center center"}, -0.10, 0.15)
-        //.to("#maskMorph", 4.4, {x:0, easing:es}, 0.5);
         return tl;
         }
 
