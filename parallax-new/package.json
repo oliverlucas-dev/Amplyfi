@@ -31,6 +31,7 @@
     "scroll-out": "^2.2.7",
     "scrollmagic": "^2.0.7",
     "smoothscroll-polyfill": "^0.4.4",
+    "snapsvg": "^0.5.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.10.2",
     "webpack-cli": "^3.0.1",
